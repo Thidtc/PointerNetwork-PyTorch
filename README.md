@@ -15,11 +15,18 @@ Convex Hull data is aviailable at [link](https://drive.google.com/drive/folders/
 
 ## Usage
 Training:
-$ python convex_hull.py
+
+```bash
+python convex_hull.py
+```
 Evaluating:
+
 Not implemented yet
+
 Visualization:
-$ tensorboard --logdir LOG_DIR
+```bash
+tensorboard --logdir LOG_DIR
+```
 
 ## Results
 * Training on Convex Hull 5
