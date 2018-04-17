@@ -51,7 +51,6 @@ class RNNEncoder(EncoderBase):
       bidirectional=bidirectional,
       num_layers=num_layers,
       dropout=dropout)
-    self.pack_padded_seq = False
     self.use_bridge = use_bridge
     if self.use_bridge:
       raise NotImplementedError()
@@ -68,7 +67,7 @@ class RNNEncoder(EncoderBase):
     memory_bank, hidden_final = self.rnn(packed_src, hidden)
 
     if self.pack_padded_seq and lengths is not None:
-      memory_bank = unpack(memory_bank)
+      memory_bank = unpack(memory_bank)[0]
     
     if self.use_bridge:
       raise NotImplementedError()
